@@ -85,3 +85,20 @@ const calculateHourlyWage = function(salary, hoursPerWeek) {
   
   let transactions = [500, 1200, 3000, 800, 2200];
   filterHighValueTransactions(transactions, amount => amount > 1000); // Expected output: [1200, 3000, 2200]
+
+
+
+  // Task 7: Closures - Budget Tracker
+
+  function createBudgetTracker() {
+    let balance = 0;
+  
+    return function(expense) {
+      balance -= expense;
+      console.log(`Current Balance: $${balance}`);
+    };
+  }
+  
+  let budget = createBudgetTracker();
+  budget(300); // Expected output: "Current Balance: -$300"
+  budget(200); // Expected output: "Current Balance: -$500"
