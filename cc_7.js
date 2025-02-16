@@ -102,3 +102,20 @@ const calculateHourlyWage = function(salary, hoursPerWeek) {
   let budget = createBudgetTracker();
   budget(300); // Expected output: "Current Balance: -$300"
   budget(200); // Expected output: "Current Balance: -$500"
+
+
+
+  // Task 8: Recursion in JavaScript - Business Growth Projection
+
+  function calculateGrowth(years, revenue) {
+    if (years === 0) {
+      console.log(`Projected Revenue: $${revenue.toFixed(2)}`);
+      return;
+    }
+    revenue += revenue * 0.05;
+    calculateGrowth(years - 1, revenue);
+  }
+  
+  calculateGrowth(8, 1000); // Expected output: "Projected Revenue: $1102.50"
+  calculateGrowth(5, 5000); // Expected output: "Projected Revenue: $6381.41"
+  
