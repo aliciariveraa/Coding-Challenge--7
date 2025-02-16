@@ -62,7 +62,7 @@ const calculateHourlyWage = function(salary, hoursPerWeek) {
   calculateShippingCost(10, "USA", true); // Expected output: "Shipping Cost: $20.00"
   calculateShippingCost(5, "Canada", false); // Expected output: "Shipping Cost: $13.50"
 
-  
+
 
   // Task 5: Returning Values - Business Loan Interest Calculation
 
@@ -74,3 +74,14 @@ const calculateHourlyWage = function(salary, hoursPerWeek) {
   calculateLoanInterest(1000, 0.05, 3); // Expected output: "Total Interest: $150.00"
   calculateLoanInterest(5000, 0.07, 5); // Expected output: "Total Interest: $1750.00"
   
+
+
+  // Task 6: Higher-Order Functions - Filtering High-Value Transactions
+
+  const filterHighValueTransactions = (transactions, filterFunction) => {
+    const filteredTransactions = transactions.filter(filterFunction);
+    console.log(filteredTransactions);
+  };
+  
+  let transactions = [500, 1200, 3000, 800, 2200];
+  filterHighValueTransactions(transactions, amount => amount > 1000); // Expected output: [1200, 3000, 2200]
